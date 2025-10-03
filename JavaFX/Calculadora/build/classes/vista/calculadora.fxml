@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Anchor1" prefHeight="552.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalculadoraController">
+   <children>
+      <AnchorPane fx:id="Anchor2" prefHeight="552.0" prefWidth="352.0" style="-fx-background-color: #6F00FF;">
+         <children>
+            <Button fx:id="boton1" layoutX="11.0" layoutY="458.0" mnemonicParsing="false" onAction="#escribirUno" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="1" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton2" layoutX="96.0" layoutY="458.0" mnemonicParsing="false" onAction="#escribirDos" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="2" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton3" layoutX="181.0" layoutY="458.0" mnemonicParsing="false" onAction="#escribirTres" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="3" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton0" layoutX="266.0" layoutY="458.0" mnemonicParsing="false" onAction="#escribirCero" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="0" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton4" layoutX="11.0" layoutY="373.0" mnemonicParsing="false" onAction="#escribirCuatro" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="4" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton5" layoutX="96.0" layoutY="373.0" mnemonicParsing="false" onAction="#escribirCinco" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="5" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton6" layoutX="181.0" layoutY="373.0" mnemonicParsing="false" onAction="#escribirSeis" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="6" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="botonRestar" layoutX="266.0" layoutY="374.0" mnemonicParsing="false" onAction="#escribirMenos" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="-" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton7" layoutX="11.0" layoutY="288.0" mnemonicParsing="false" onAction="#escribirSiete" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="7" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton8" layoutX="96.0" layoutY="288.0" mnemonicParsing="false" onAction="#escribirOcho" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="8" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="boton9" layoutX="181.0" layoutY="288.0" mnemonicParsing="false" onAction="#escribirNueve" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="9" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="botonSumar" layoutX="266.0" layoutY="288.0" mnemonicParsing="false" onAction="#escribirMas" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="+" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font></Button>
+            <Button fx:id="botonBorrar" layoutX="11.0" layoutY="204.0" mnemonicParsing="false" onAction="#borrar" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="CE" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font></Button>
+            <Button fx:id="botonMultiplicar" layoutX="96.0" layoutY="204.0" mnemonicParsing="false" onAction="#escrbirMultiplicar" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="*" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Button>
+            <Button fx:id="botonDividir" layoutX="181.0" layoutY="204.0" mnemonicParsing="false" onAction="#escribirDividir" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="/" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Button>
+            <Button fx:id="botonResultado" layoutX="266.0" layoutY="204.0" mnemonicParsing="false" onAction="#escrbirResultado" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #65C295;" text="=" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="Anchor3" layoutX="13.0" layoutY="14.0" prefHeight="175.0" prefWidth="326.0" style="-fx-background-color: #65C295;">
+               <children>
+                  <TextField fx:id="text1" layoutX="18.0" layoutY="8.0" prefHeight="160.0" prefWidth="290.0" style="-fx-background-color: #96A78D;">
+                     <font>
+                        <Font size="37.0" />
+                     </font></TextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
