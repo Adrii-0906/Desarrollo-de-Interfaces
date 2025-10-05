@@ -99,33 +99,32 @@ public class Inicio extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addGroup(panelCabeceraLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(iconoBuscar)))
-                        .addGap(0, 70, Short.MAX_VALUE))
+                        .addContainerGap(191, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCabeceraLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(iconoAjustes)))
-                .addContainerGap())
+                        .addComponent(iconoAjustes)
+                        .addGap(152, 152, 152))))
         );
         panelCabeceraLayout.setVerticalGroup(
             panelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCabeceraLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(panelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(iconoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelCabeceraLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCabeceraLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelCabeceraLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)
+                        .addGroup(panelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(iconoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelCabeceraLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addComponent(iconoAjustes))
-                    .addComponent(nombreApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelCabeceraLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(nombreApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -138,6 +137,7 @@ public class Inicio extends javax.swing.JFrame {
         iconoFoto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/image.png"))); // NOI18N
 
         nombreLana.setFont(new java.awt.Font("P052", 3, 24)); // NOI18N
+        nombreLana.setForeground(new java.awt.Color(255, 255, 255));
         nombreLana.setText("Lana Rhoades");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -149,7 +149,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreLana)
-                .addContainerGap(474, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +163,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 750, 100));
+        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 630, 100));
 
         panel2.setBackground(new java.awt.Color(255, 102, 51));
 
@@ -181,7 +181,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreSofia)
-                .addContainerGap(490, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +195,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 750, -1));
+        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 630, -1));
 
         panel3.setBackground(new java.awt.Color(0, 0, 0));
         panel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -205,6 +205,7 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         nombreMarta.setFont(new java.awt.Font("P052", 3, 24)); // NOI18N
+        nombreMarta.setForeground(new java.awt.Color(255, 255, 255));
         nombreMarta.setText("Marta Diaz");
 
         iconoFoto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/marta.png"))); // NOI18N
@@ -218,21 +219,20 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreMarta)
-                .addContainerGap(500, Short.MAX_VALUE))
+                .addContainerGap(380, Short.MAX_VALUE))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(iconoFoto3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nombreMarta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addComponent(iconoFoto3)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 750, -1));
+        getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 342, 630, 90));
 
         panel4.setBackground(new java.awt.Color(255, 102, 51));
 
@@ -250,7 +250,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreMasi)
-                .addContainerGap(562, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
         );
         panel4Layout.setVerticalGroup(
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,11 +264,12 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        getContentPane().add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 750, 94));
+        getContentPane().add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 630, 94));
 
         panel5.setBackground(new java.awt.Color(0, 0, 0));
 
         nombreAlana.setFont(new java.awt.Font("P052", 3, 24)); // NOI18N
+        nombreAlana.setForeground(new java.awt.Color(255, 255, 255));
         nombreAlana.setText("Alana");
 
         iconoFoto5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/alana.png"))); // NOI18N
@@ -282,7 +283,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreAlana)
-                .addContainerGap(561, Short.MAX_VALUE))
+                .addContainerGap(441, Short.MAX_VALUE))
         );
         panel5Layout.setVerticalGroup(
             panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,7 +297,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        getContentPane().add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 750, 100));
+        getContentPane().add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 630, 100));
 
         panel6.setBackground(new java.awt.Color(255, 102, 51));
 
@@ -314,7 +315,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(iconoFoto6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombreAri)
-                .addContainerGap(583, Short.MAX_VALUE))
+                .addContainerGap(463, Short.MAX_VALUE))
         );
         panel6Layout.setVerticalGroup(
             panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,7 +329,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        getContentPane().add(panel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 750, -1));
+        getContentPane().add(panel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 630, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -339,10 +340,16 @@ public class Inicio extends javax.swing.JFrame {
 
     private void iconoAjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconoAjustesMouseClicked
         // TODO add your handling code here:
+        Ajustes ventanaAjustes = new Ajustes();
+        ventanaAjustes.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_iconoAjustesMouseClicked
 
     private void panel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel3MouseClicked
         // TODO add your handling code here:
+        Chat ventanaChat = new Chat();
+        ventanaChat.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_panel3MouseClicked
 

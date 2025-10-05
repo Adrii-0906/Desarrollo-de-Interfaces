@@ -397,30 +397,36 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_Boton9ActionPerformed
 
     private void BotonResulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonResulActionPerformed
-        String expresion = entrada.getText().trim(); // quitar espacios
+        String expresion = entrada.getText().trim();
 
         if (expresion.isEmpty()) {
-            return; // no hace nada si está vacío
+            return;
         }
 
-        // Evitar que termine en un operador
         char ultimo = expresion.charAt(expresion.length() - 1);
         if ("+-*/".indexOf(ultimo) >= 0) {
             entrada.setText("Error");
             return;
         }
 
+        if (expresion.contains("/0")) {
+            entrada.setText("División por Cero");
+            return;
+        }
+
         try {
-            javax.script.ScriptEngine engine = new javax.script.ScriptEngineManager().getEngineByName("JavaScript");
-            
-            try {
-                double resultado = evaluarExpresion(expresion);
-                entrada.setText(String.valueOf(resultado));
-            } catch (Exception e) {
-                entrada.setText("Error");
-            }
-        } catch (Exception e) {
-            entrada.setText("Error");
+            long resultado = evaluarExpresionEntera(expresion);
+
+            // Muestra el resultado como un entero largo (long)
+            entrada.setText(String.valueOf(resultado));
+
+        } catch (ArithmeticException ae) {
+            // Captura errores de división por cero
+            entrada.setText(ae.getMessage());
+        }
+        catch (Exception e) {
+            // En caso de cualquier otro error (sintaxis, etc.)
+            entrada.setText("Error de Sintaxis");
         }
     }//GEN-LAST:event_BotonResulActionPerformed
 
@@ -457,59 +463,78 @@ public class Calculadora extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new Calculadora().setVisible(true));
     }
     
-    private double evaluarExpresion(String expresion) {
-    // Usamos Java nativo: ScriptEngine ya no está en Java 15+
-    // Esto evalúa suma, resta, multiplicación y división respetando precedencia.
-    java.util.Stack<Double> numeros = new java.util.Stack<>();
-    java.util.Stack<Character> operadores = new java.util.Stack<>();
+ 
 
-    for (int i = 0; i < expresion.length(); i++) {
-        char c = expresion.charAt(i);
+    private long evaluarExpresionEntera(String expresion) {
+        java.util.Stack<Long> numeros = new java.util.Stack<>(); // Cambiado a Long
+        java.util.Stack<Character> operadores = new java.util.Stack<>();
 
-        if (Character.isDigit(c)) {
-            StringBuilder num = new StringBuilder();
-            while (i < expresion.length() && (Character.isDigit(expresion.charAt(i)) || expresion.charAt(i) == '.')) {
-                num.append(expresion.charAt(i));
-                i++;
+        for (int i = 0; i < expresion.length(); i++) {
+            char c = expresion.charAt(i);
+
+            if (c == ' ') continue;
+
+            if (Character.isDigit(c)) {
+                StringBuilder num = new StringBuilder();
+                while (i < expresion.length() && Character.isDigit(expresion.charAt(i))) {
+                    num.append(expresion.charAt(i));
+                    i++;
+                }
+                i--;
+                // Usamos Long.parseLong para obtener el valor entero
+                numeros.push(Long.parseLong(num.toString()));
+            } else if ("+-*/".indexOf(c) >= 0) {
+                while (!operadores.isEmpty() && precedencia(operadores.peek()) >= precedencia(c)) {
+                    if (numeros.size() < 2) throw new IllegalArgumentException("Expresión inválida");
+                    long b = numeros.pop(); // Pop de long
+                    long a = numeros.pop(); // Pop de long
+                    char op = operadores.pop();
+                    numeros.push(operarEntero(a, b, op)); // Llama al método entero
+                }
+                operadores.push(c);
             }
-            i--;
-            numeros.push(Double.parseDouble(num.toString()));
-        } else if ("+-*/".indexOf(c) >= 0) {
-            while (!operadores.isEmpty() && precedencia(operadores.peek()) >= precedencia(c)) {
-                double b = numeros.pop();
-                double a = numeros.pop();
-                char op = operadores.pop();
-                numeros.push(operar(a, b, op));
-            }
-            operadores.push(c);
         }
+
+        while (!operadores.isEmpty()) {
+            if (numeros.size() < 2) throw new IllegalArgumentException("Expresión inválida");
+            long b = numeros.pop(); // Pop de long
+            long a = numeros.pop(); // Pop de long
+            char op = operadores.pop();
+            numeros.push(operarEntero(a, b, op)); // Llama al método entero
+        }
+
+        if (numeros.size() != 1) throw new IllegalArgumentException("Expresión inválida");
+        return numeros.pop();
     }
 
-    while (!operadores.isEmpty()) {
-        double b = numeros.pop();
-        double a = numeros.pop();
-        char op = operadores.pop();
-        numeros.push(operar(a, b, op));
+    private int precedencia(char op) {
+        if (op == '+' || op == '-') return 1;
+        if (op == '*' || op == '/') return 2;
+        return 0;
     }
 
-    return numeros.pop();
-}
-
-private int precedencia(char op) {
-    if (op == '+' || op == '-') return 1;
-    if (op == '*' || op == '/') return 2;
-    return 0;
-}
-
-private double operar(double a, double b, char op) {
-    switch (op) {
-        case '+': return a + b;
-        case '-': return a - b;
-        case '*': return a * b;
-        case '/': return a / b;
+    private long operarEntero(long a, long b, char op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': 
+                if (b == 0) throw new ArithmeticException("División por Cero");
+                // La división de long en Java es automáticamente división entera (descarta el resto)
+                return a / b;
+        }
+        return 0;
     }
-    return 0;
-}
+
+    private double operar(double a, double b, char op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
+        }
+        return 0;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

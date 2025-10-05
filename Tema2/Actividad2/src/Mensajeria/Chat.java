@@ -40,13 +40,13 @@ public class Chat extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         panelChat1 = new javax.swing.JPanel();
         chat = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 600));
@@ -57,6 +57,7 @@ public class Chat extends javax.swing.JFrame {
         icnonoMartaChat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/marta.png"))); // NOI18N
 
         nombreMartaChat.setFont(new java.awt.Font("P052", 3, 36)); // NOI18N
+        nombreMartaChat.setForeground(new java.awt.Color(255, 255, 255));
         nombreMartaChat.setText("Marta Diaz");
 
         iconoLlamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/llamada.png"))); // NOI18N
@@ -64,6 +65,11 @@ public class Chat extends javax.swing.JFrame {
         iconoVideollamada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/videollamada.png"))); // NOI18N
 
         IrAInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sources/cerrar.png"))); // NOI18N
+        IrAInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IrAInicioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelChatLayout = new javax.swing.GroupLayout(panelChat);
         panelChat.setLayout(panelChatLayout);
@@ -76,11 +82,11 @@ public class Chat extends javax.swing.JFrame {
                 .addComponent(icnonoMartaChat)
                 .addGap(18, 18, 18)
                 .addComponent(nombreMartaChat, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
                 .addComponent(iconoVideollamada)
                 .addGap(18, 18, 18)
                 .addComponent(iconoLlamada)
-                .addContainerGap())
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         panelChatLayout.setVerticalGroup(
             panelChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +99,7 @@ public class Chat extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelChatLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(nombreMartaChat))
-                            .addComponent(iconoVideollamada, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addComponent(iconoVideollamada)))
                     .addGroup(panelChatLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(icnonoMartaChat))
@@ -103,29 +109,102 @@ public class Chat extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(panelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setBackground(new java.awt.Color(255, 102, 0));
         jLabel3.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Holaaa");
 
         jLabel4.setBackground(new java.awt.Color(204, 102, 0));
         jLabel4.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Holaaa");
 
         jLabel5.setBackground(new java.awt.Color(204, 102, 0));
         jLabel5.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Q hacesss???");
 
         jLabel6.setBackground(new java.awt.Color(204, 102, 0));
         jLabel6.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nada en Casa");
 
         jLabel7.setBackground(new java.awt.Color(204, 102, 0));
         jLabel7.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Y tu???");
+
+        jLabel9.setBackground(new java.awt.Color(204, 102, 0));
+        jLabel9.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Esperandotee");
+
+        jLabel10.setBackground(new java.awt.Color(204, 102, 0));
+        jLabel10.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Y esoooo???");
+
+        jLabel11.setBackground(new java.awt.Color(204, 102, 0));
+        jLabel11.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Quiero verte yaaa!!!");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 360, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel4)
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addGap(51, 51, 51)))
+                .addComponent(jLabel11)
+                .addGap(31, 31, 31))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 640, 380));
 
         panelChat1.setBackground(new java.awt.Color(204, 102, 0));
 
@@ -146,88 +225,29 @@ public class Chat extends javax.swing.JFrame {
             panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelChat1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(chat, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(chat, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(62, 62, 62))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         panelChat1Layout.setVerticalGroup(
             panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelChat1Layout.createSequentialGroup()
-                .addGroup(panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel2)
+                .addGroup(panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addGroup(panelChat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(panelChat1Layout.createSequentialGroup()
                             .addGap(16, 16, 16)
-                            .addComponent(jLabel8)))
-                    .addGroup(panelChat1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(chat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2))
+                        .addGroup(panelChat1Layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(chat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jLabel9.setBackground(new java.awt.Color(204, 102, 0));
-        jLabel9.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
-        jLabel9.setText("Esperandotee");
-
-        jLabel10.setBackground(new java.awt.Color(204, 102, 0));
-        jLabel10.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
-        jLabel10.setText("Y esoooo???");
-
-        jLabel11.setBackground(new java.awt.Color(204, 102, 0));
-        jLabel11.setFont(new java.awt.Font("Ubuntu Sans Mono", 3, 24)); // NOI18N
-        jLabel11.setText("Quiero verte yaaa!!!");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelChat1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel3)
-                .addGap(17, 17, 17)
-                .addComponent(jLabel4)
-                .addGap(16, 16, 16)
-                .addComponent(jLabel5)
-                .addGap(16, 16, 16)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(45, 45, 45)
-                .addComponent(panelChat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 820, 540));
+        getContentPane().add(panelChat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 640, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -235,6 +255,15 @@ public class Chat extends javax.swing.JFrame {
     private void chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chatActionPerformed
+
+    private void IrAInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IrAInicioMouseClicked
+        // TODO add your handling code here:
+        Inicio ventanaInicio = new Inicio();
+        
+        ventanaInicio.setVisible(true);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_IrAInicioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -260,6 +289,13 @@ public class Chat extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Chat().setVisible(true));
     }
+    
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IrAInicioMouseClicked(evt); // Asegúrate que este método esté aquí
+    }
+    
+
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IrAInicio;
