@@ -102,11 +102,11 @@ public class Inicio extends javax.swing.JFrame {
                                 .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(iconoBuscar)))
-                        .addContainerGap(191, Short.MAX_VALUE))
+                        .addGap(0, 65, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCabeceraLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(iconoAjustes)
-                        .addGap(152, 152, 152))))
+                        .addComponent(iconoAjustes)))
+                .addContainerGap())
         );
         panelCabeceraLayout.setVerticalGroup(
             panelCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +128,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(panelCabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 140));
+        jPanel1.add(panelCabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 140));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PantallaPrincipalControlador">
+   <children>
+      <ImageView fitHeight="461.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="30.0" prefWidth="800.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="765.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/wifi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="727.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/senal.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="691.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bluetooth.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="86.0" layoutY="3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-sonido-16.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="horaReal" layoutX="2.0" layoutY="3.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #000000;" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="90.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/spotify.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="220.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/google.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gps" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="93.0" onMouseClicked="#irAGps" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mapas-de-google.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="radio" fitHeight="100.0" fitWidth="100.0" layoutX="480.0" layoutY="93.0" onMouseClicked="#irARadio" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/radio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/llamada.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="90.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/reproductor-de-musica.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="220.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ajuste.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/carplay.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="480.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bluetooth1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/apagado.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="30.0" prefHeight="430.0" prefWidth="30.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/encendido.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/casa.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/flecha-izquierda.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/aumenta-el-volumen.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/reducir-el-volumen.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
