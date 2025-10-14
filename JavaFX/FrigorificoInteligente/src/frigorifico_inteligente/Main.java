@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package navegador_automovil;
+package frigorifico_inteligente;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -19,19 +19,17 @@ import javafx.stage.Stage;
  *
  * @author adrian
  */
-public class NavegadorAutomovil extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-            Parent root = FXMLLoader.load(getClass().getResource("/vista/pantallaPrincipal.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/frigorifico_inteligente/vista/pantallaPrincipal.fxml")); 
 
-            // Cargo el scene
-            
+                       
             Scene scene = new Scene(root);
             
             primaryStage.setTitle("Pantalla Principal");
-            // Seteo la scene y la muestro
             primaryStage.setScene(scene);
             primaryStage.show();
     }
