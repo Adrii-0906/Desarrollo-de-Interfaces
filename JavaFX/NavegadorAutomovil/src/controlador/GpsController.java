@@ -23,6 +23,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 /**
@@ -38,6 +41,9 @@ public class GpsController implements Initializable {
     private ImageView atras;
     @FXML
     private Label horaReal;
+    @FXML
+    private Pane panelMapa;
+    
 
     /**
      * Initializes the controller class.
@@ -45,8 +51,25 @@ public class GpsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         iniciarReloj();
+        inicializarMapaWeb();
     }    
 
+    private void inicializarMapaWeb() {
+        // Crear WebView
+        WebView webView = new WebView();
+        WebEngine engine = webView.getEngine();
+
+        String urlMapa = "https://www.google.com/maps/";
+        engine.load(urlMapa);
+
+        // Ajustar tamaño del WebView al Pane
+        webView.prefWidthProperty().bind(panelMapa.widthProperty());
+        webView.prefHeightProperty().bind(panelMapa.heightProperty());
+
+        // Añadir al panelMapa
+        panelMapa.getChildren().add(webView);
+    }
+    
     @FXML
     private void irACasa(MouseEvent event) {
         try {
