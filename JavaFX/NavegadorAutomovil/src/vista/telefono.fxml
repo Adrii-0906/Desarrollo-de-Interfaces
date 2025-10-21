@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.TelefonoController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="30.0" prefWidth="800.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="765.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/wifi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="727.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/senal.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="691.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bluetooth.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="86.0" layoutY="3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-sonido-16.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="horaReal" layoutX="2.0" layoutY="3.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #000000;" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="29.0" prefHeight="433.0" prefWidth="30.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/encendido.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="casa" fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="155.0" onMouseClicked="#irACasa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/casa.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="atras" fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="200.0" onMouseClicked="#salir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/flecha-izquierda.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/aumenta-el-volumen.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="30.0" layoutX="-1.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/reducir-el-volumen.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="50.0" layoutY="49.0" text="Agenda">
+         <font>
+            <Font name="Liberation Serif" size="35.0" />
+         </font>
+      </Label>
+      <Separator layoutX="39.0" layoutY="88.0" prefHeight="0.0" prefWidth="347.0" style="-fx-border-color: #000000; -fx-background-color: #000000;" />
+      <Pane layoutX="39.0" layoutY="102.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="65.0" layoutY="8.0" text="AaMama (2)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada-perdida.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="155.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="65.0" layoutY="8.0" text="AaPapa">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="208.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="65.0" layoutY="8.0" text="AbuFav (4)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada-perdida.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="262.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="64.0" layoutY="10.0" text="Biscochito de Pan">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="315.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="65.0" layoutY="8.0" text="Mia Khalifa">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="367.0" prefHeight="50.0" prefWidth="347.0" style="-fx-background-color: #bcb8b1;">
+         <children>
+            <Label layoutX="65.0" layoutY="8.0" text="MiCanijo (77)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada-perdida.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/videollamada.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="294.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/llamada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="414.0" layoutY="39.0" prefHeight="378.0" prefWidth="363.0">
+         <children>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="304.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="*">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="152.0" layoutY="304.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="0">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="222.0" layoutY="304.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="#">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="234.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="7">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="152.0" layoutY="234.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="8">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="222.0" layoutY="234.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="9">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="164.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="4">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="152.0" layoutY="164.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="5">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="222.0" layoutY="164.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="6">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="94.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="1">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="152.0" layoutY="94.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="2">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="222.0" layoutY="94.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #8ecae6;" text="3">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <TextField layoutX="82.0" layoutY="46.0" prefHeight="39.0" prefWidth="200.0" promptText="Teclado" style="-fx-border-color: #ffffff;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

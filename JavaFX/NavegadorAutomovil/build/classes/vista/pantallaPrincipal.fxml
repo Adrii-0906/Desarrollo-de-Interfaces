@@ -57,7 +57,7 @@
             <Image url="@../images/radio.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="610.0" layoutY="93.0" onMouseClicked="#IrATelefono" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/llamada.png" />
          </image>

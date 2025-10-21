@@ -115,4 +115,21 @@ public class PantallaPrincipalControlador implements Initializable {
         // Inicia la animación
         timeline.play();
     }
+
+    @FXML
+    private void IrATelefono(MouseEvent event) {
+        try {
+            
+        Parent root1 = FXMLLoader.load(getClass().getResource("/vista/telefono.fxml")); 
+
+        Scene siguienteScene1 = new Scene(root1);
+        Stage appStage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        appStage1.setScene(siguienteScene1);
+        appStage1.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

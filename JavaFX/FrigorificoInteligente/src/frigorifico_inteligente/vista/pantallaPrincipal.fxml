@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -8,15 +10,73 @@
    <children>
       <AnchorPane opacity="0.8" prefHeight="599.0" prefWidth="450.0" style="-fx-background-color: #0F0E0E;">
          <children>
-            <Label fx:id="laberHora" alignment="CENTER" layoutX="63.0" layoutY="90.0" prefHeight="89.0" prefWidth="325.0" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="laberHora" alignment="CENTER" layoutX="14.0" layoutY="81.0" prefHeight="89.0" prefWidth="325.0" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="5.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #ffffff;" />
-            <AnchorPane layoutX="230.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #ffffff;" />
-            <AnchorPane layoutX="5.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #ffffff;" />
-            <AnchorPane layoutX="230.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #ffffff;" />
+            <AnchorPane layoutX="5.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sources/dieta.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="31.0" layoutY="134.0" text="Alimentos">
+                     <font>
+                        <Font name="Noto Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="230.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sources/noviembre.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="26.0" layoutY="134.0" text="Calendario">
+                     <font>
+                        <Font name="Noto Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sources/lista-de-verificacion.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="8.0" layoutY="134.0" prefHeight="42.0" prefWidth="200.0" text="Lista Alimentos">
+                     <font>
+                        <Font name="Noto Sans Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="230.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+               <children>
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sources/engranaje.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="134.0" text="Ajustes">
+                     <font>
+                        <Font name="Noto Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <Label alignment="CENTER" layoutX="351.0" layoutY="81.0" prefHeight="89.0" prefWidth="85.0" text="23°C" textFill="WHITE">
+               <font>
+                  <Font name="Noto Serif Bengali Regular" size="33.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="112.0" layoutX="164.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sources/samsung.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

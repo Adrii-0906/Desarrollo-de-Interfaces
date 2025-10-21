@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="frigorifico_inteligente.controller.AjustesController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="450.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="450.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label layoutX="133.0" layoutY="14.0" text="Ajustes" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sources/cancelar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
