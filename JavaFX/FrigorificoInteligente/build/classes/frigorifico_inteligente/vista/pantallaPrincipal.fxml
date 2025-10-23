@@ -1,83 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="599.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frigorifico_inteligente.controller.PantallaPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="550.0" style="-fx-background-color: #16476A;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frigorifico_inteligente.controller.PantallaPrincipalController">
    <children>
-      <AnchorPane opacity="0.8" prefHeight="599.0" prefWidth="450.0" style="-fx-background-color: #0F0E0E;">
+      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #0F0E0E; -fx-background-radius: 20px;">
          <children>
-            <Label fx:id="laberHora" alignment="CENTER" layoutX="14.0" layoutY="81.0" prefHeight="89.0" prefWidth="325.0" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="laberHora" alignment="CENTER" layoutX="39.0" layoutY="154.0" prefHeight="89.0" prefWidth="325.0" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="5.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+            <AnchorPane layoutX="9.0" layoutY="263.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
                <children>
-                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="62.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../sources/dieta.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="31.0" layoutY="134.0" text="Alimentos">
+                  <Label layoutX="69.0" layoutY="145.0" text="Alimentos">
                      <font>
-                        <Font name="Noto Sans Bold" size="30.0" />
+                        <Font name="Noto Sans Bold" size="20.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane layoutX="230.0" layoutY="179.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+            <AnchorPane layoutX="254.0" layoutY="263.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
                <children>
-                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="62.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../sources/noviembre.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="26.0" layoutY="134.0" text="Calendario">
+                  <Label layoutX="65.0" layoutY="149.0" text="Calendario">
                      <font>
-                        <Font name="Noto Sans Bold" size="30.0" />
+                        <Font name="Noto Sans Bold" size="20.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane layoutX="5.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+            <AnchorPane layoutX="9.0" layoutY="473.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
                <children>
-                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="62.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../sources/lista-de-verificacion.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="8.0" layoutY="134.0" prefHeight="42.0" prefWidth="200.0" text="Lista Alimentos">
+                  <Label layoutX="83.0" layoutY="148.0" prefHeight="29.0" prefWidth="73.0" text="Listas">
                      <font>
-                        <Font name="Noto Sans Bold" size="25.0" />
+                        <Font name="Noto Sans Bold" size="20.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane layoutX="230.0" layoutY="395.0" prefHeight="190.0" prefWidth="215.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
+            <AnchorPane layoutX="254.0" layoutY="473.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;">
                <children>
-                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="115.0" layoutX="62.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../sources/engranaje.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="52.0" layoutY="134.0" text="Ajustes">
+                  <Label layoutX="83.0" layoutY="148.0" text="Ajustes">
                      <font>
-                        <Font name="Noto Sans Bold" size="30.0" />
+                        <Font name="Noto Sans Bold" size="20.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <Label alignment="CENTER" layoutX="351.0" layoutY="81.0" prefHeight="89.0" prefWidth="85.0" text="23°C" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="376.0" layoutY="154.0" prefHeight="89.0" prefWidth="85.0" text="23°C" textFill="WHITE">
                <font>
                   <Font name="Noto Serif Bengali Regular" size="33.0" />
                </font>
             </Label>
-            <ImageView fitHeight="42.0" fitWidth="112.0" layoutX="164.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="82.0" fitWidth="265.0" layoutX="127.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sources/samsung.png" />
                </image>
             </ImageView>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>
