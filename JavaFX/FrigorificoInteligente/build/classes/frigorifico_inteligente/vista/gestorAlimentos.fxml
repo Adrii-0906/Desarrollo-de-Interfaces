@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -17,7 +18,7 @@
                <font>
                   <Font name="Noto Serif Display Regular" size="48.0" />
                </font></Label>
-            <Label alignment="CENTER" layoutX="50.0" layoutY="184.0" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="POSTRES">
+            <Label fx:id="postres" alignment="CENTER" layoutX="50.0" layoutY="184.0" onMouseClicked="#irAPostres" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="POSTRES">
                <font>
                   <Font name="Noto Serif CJK SC Bold" size="36.0" />
                </font>
@@ -29,7 +30,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="50.0" layoutY="276.0" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="BEBIDAS">
+            <Label fx:id="bebidas" alignment="CENTER" layoutX="50.0" layoutY="276.0" onMouseClicked="#irABebidas" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="BEBIDAS">
                <font>
                   <Font name="Noto Serif CJK SC Bold" size="36.0" />
                </font>
@@ -41,7 +42,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="50.0" layoutY="368.0" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="VERDURAS">
+            <Label fx:id="verduras" alignment="CENTER" layoutX="50.0" layoutY="368.0" onMouseClicked="#irAVerduras" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="VERDURAS">
                <font>
                   <Font name="Noto Serif CJK SC Bold" size="36.0" />
                </font>
@@ -53,7 +54,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="50.0" layoutY="459.0" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="COMIDA">
+            <Label fx:id="comida" alignment="CENTER" layoutX="50.0" layoutY="459.0" onMouseClicked="#irAComida" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="COMIDA">
                <font>
                   <Font name="Noto Serif CJK SC Bold" size="36.0" />
                </font>
@@ -65,7 +66,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="50.0" layoutY="551.0" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="Frigorífico">
+            <Label fx:id="frigorifico" alignment="CENTER" layoutX="50.0" layoutY="551.0" onMouseClicked="#irAFrigorifico" prefWidth="400.0" style="-fx-background-color: #eae2b7; -fx-background-radius: 20px;" text="Frigorífico">
                <font>
                   <Font name="Noto Serif CJK SC Bold" size="36.0" />
                </font>
@@ -77,7 +78,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Pane layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #16476A; -fx-background-radius: 50px;">
+            <Pane fx:id="salir" layoutX="14.0" layoutY="14.0" onMouseClicked="#irAInicio" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #16476A; -fx-background-radius: 50px;">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -85,6 +86,9 @@
                      </image>
                   </ImageView>
                </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
          </children></AnchorPane>
    </children>
