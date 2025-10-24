@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Hyperlink?>
@@ -31,6 +32,9 @@
                            </image>
                         </ImageView>
                      </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
                   <Label layoutX="30.0" layoutY="200.0" text="Control temperatura" textFill="WHITE">
                      <font>
@@ -48,7 +52,7 @@
                         <Font name="Noto Serif Display Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="choiceBox" layoutX="30.0" layoutY="390.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="30.0" layoutY="390.0" prefHeight="26.0" prefWidth="200.0" />
                   <Label layoutX="30.0" layoutY="460.0" text="Notificaciones" textFill="WHITE">
                      <font>
                         <Font name="Noto Serif Display Bold" size="24.0" />
@@ -67,7 +71,7 @@
                         <Font name="Noto Serif Display Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Hyperlink fx:id="enlace" layoutX="30.0" layoutY="640.0" text="Para conectar el telefono pulsa aqui">
+                  <Hyperlink fx:id="enlace" layoutX="30.0" layoutY="640.0" onAction="#abrirEnlace" text="Para conectar el telefono pulsa aqui">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -142,7 +142,7 @@ public class PantallaPrincipalController implements Initializable {
     private void irAListas(MouseEvent event) {
         try {
             
-        Parent root = FXMLLoader.load(getClass().getResource("/frigorifico_inteligente/vista/listaAlimentos.fxml")); 
+        Parent root = FXMLLoader.load(getClass().getResource("/frigorifico_inteligente/vista/productosExistentes.fxml")); 
 
         Scene siguienteScene = new Scene(root);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

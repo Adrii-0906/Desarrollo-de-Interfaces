@@ -116,6 +116,19 @@ public class GestorAlimentosController implements Initializable {
 
     @FXML
     private void irAFrigorifico(MouseEvent event) {
+        try {
+            
+        Parent root = FXMLLoader.load(getClass().getResource("/frigorifico_inteligente/vista/frigorifico.fxml")); 
+
+        Scene siguienteScene = new Scene(root);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        appStage.setScene(siguienteScene);
+        appStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -134,5 +147,4 @@ public class GestorAlimentosController implements Initializable {
             e.printStackTrace();
         }
     }
-    
 }

@@ -6,6 +6,7 @@ package frigorifico_inteligente;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +22,12 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
     
+    private static HostServices hostServices;
+    
     @Override
     public void start(Stage primaryStage) throws Exception{
+            
+            hostServices = getHostServices();
 
             Parent root = FXMLLoader.load(getClass().getResource("/frigorifico_inteligente/vista/pantallaPrincipal.fxml")); 
 
@@ -36,6 +41,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }    
+    }  
     
+    public static HostServices getAppHostServices() {
+        return hostServices;
+    }
 }

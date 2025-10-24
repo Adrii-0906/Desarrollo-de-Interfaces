@@ -4,9 +4,12 @@
  */
 package frigorifico_inteligente.controller;
 
+import frigorifico_inteligente.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.HostServices;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,7 +37,7 @@ public class AjustesController implements Initializable {
     @FXML
     private Slider slider;
     @FXML
-    private ChoiceBox<?> choiceBox;
+    private ChoiceBox<String> choiceBox;
     @FXML
     private CheckBox ckeckBox;
     @FXML
@@ -48,6 +51,7 @@ public class AjustesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarSlider();
+        cargarChoiceBox();
         
     }    
 
@@ -82,5 +86,50 @@ public class AjustesController implements Initializable {
             labelTemperatura.setText(valorFormateado);
         });
     }
+    
+    
+    
+    private void cargarChoiceBox() {
+        choiceBox.getItems().addAll(
+                "Normar (Uso diario)",
+                "Power Cool (Enfriado Rapido)",
+                "Power Freeze (Congelacion Rapida)",
+                "Modo vacacionnes"
+        );
+        
+        choiceBox.setValue("Normal (Uso diario)");
+    }
+    
+    private void activarModoEspecial() {
+        String modoSeleccionado = choiceBox.getValue();
+        
+        switch(modoSeleccionado) {
+            
+            case "Normal (Uso diario)":
+                break;
+            case "Power Cool (Enfriado Rapido)":
+                break;
+            case "Power Freeze (Congelacion Rapida)":
+                break;
+            case "Modo vacaciones":
+                break;
+            default:
+                break;
+        } 
+    }
+    
+    private static final String urlDestino = "https://www.samsung.com/es/refrigerators/side-by-side/refrigerator-sbs-family-hub-614l-black-doi-rs90f66befef/";
+
+    @FXML
+    private void abrirEnlace(ActionEvent event) {
+         HostServices hostService = Main.getAppHostServices();
+        
+        if (hostService != null) {
+            hostService.showDocument(urlDestino);
+        } else {
+            System.err.println("Error: El HostService no esta disponible en estos momentos");
+        }
+    }
+    
     
 }
