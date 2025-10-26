@@ -114,6 +114,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Gestor de Alimentos");
         appStage.show();
 
         } catch (IOException e) {
@@ -131,6 +132,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Calendario");        
         appStage.show();
 
         } catch (IOException e) {
@@ -148,6 +150,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Lista de Alimentos");
         appStage.show();
 
         } catch (IOException e) {
@@ -165,6 +168,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Ajustes");        
         appStage.show();
 
         } catch (IOException e) {

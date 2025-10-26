@@ -47,6 +47,7 @@ public class CalendarioController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Pantalla Pricipal");        
         appStage.show();
 
         } catch (IOException e) {

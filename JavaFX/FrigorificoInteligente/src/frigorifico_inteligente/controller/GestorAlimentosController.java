@@ -56,6 +56,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("CRUD Postres");
         appStage.show();
 
         } catch (IOException e) {
@@ -73,6 +74,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("CRUD Bebidas");
         appStage.show();
 
         } catch (IOException e) {
@@ -90,6 +92,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("CRUD Verduras");
         appStage.show();
 
         } catch (IOException e) {
@@ -107,6 +110,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("CRUD Comida");        
         appStage.show();
 
         } catch (IOException e) {
@@ -124,6 +128,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Frigorifico");
         appStage.show();
 
         } catch (IOException e) {
@@ -141,6 +146,7 @@ public class GestorAlimentosController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Pantalla Principal");
         appStage.show();
 
         } catch (IOException e) {

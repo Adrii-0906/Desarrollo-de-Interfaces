@@ -65,6 +65,7 @@ public class AjustesController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Pantalla Pricipal");        
         appStage.show();
 
         } catch (IOException e) {
@@ -94,7 +95,7 @@ public class AjustesController implements Initializable {
                 "Normar (Uso diario)",
                 "Power Cool (Enfriado Rapido)",
                 "Power Freeze (Congelacion Rapida)",
-                "Modo vacacionnes"
+                "Modo vacaciones"
         );
         
         choiceBox.setValue("Normal (Uso diario)");

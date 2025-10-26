@@ -41,6 +41,7 @@ public class FrigorificoController implements Initializable {
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         appStage.setScene(siguienteScene);
+        appStage.setTitle("Pantalla Principal");        
         appStage.show();
 
         } catch (IOException e) {
