@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c02d7ea3-0e0a-4378-abfe-765c491a3344" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +20,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/adrian/Documentos/2DAM/Desarrollo de Interfaces/JavaFX/FrigorificoInteligente/carpetaFicheros"
+    "last_opened_file_path": "/home/adrian/Documentos/2DAM/Desarrollo de Interfaces/JavaFX/Prueba",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="TaskManager">
