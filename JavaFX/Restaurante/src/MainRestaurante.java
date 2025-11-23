@@ -8,7 +8,7 @@ public class MainRestaurante extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Restaurante/vistas/pantallaPrincipal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Restaurante/vistas/inicio.fxml"));
 
         // Cargo el scene
         Scene scene = new Scene(root);

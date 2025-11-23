@@ -8,9 +8,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurante.controllers.PantallaPrincipalController">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" style="-fx-background-image: 1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurante.controllers.PantallaPrincipalController">
    <children>
-      <AnchorPane layoutX="30.0" layoutY="31.0" prefHeight="60.0" prefWidth="940.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #8FABD4; -fx-background-radius: 10px;">
+      <AnchorPane layoutX="30.0" layoutY="31.0" prefHeight="60.0" prefWidth="940.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #986754; -fx-background-radius: 10px;">
          <children>
             <Label layoutX="379.0" layoutY="9.0" text="Casa Manolo">
                <font>
@@ -21,75 +21,100 @@
       </AnchorPane>
       <AnchorPane layoutX="30.0" layoutY="120.0" prefHeight="600.0" prefWidth="625.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #ffffff;">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa1" fitHeight="160.0" fitWidth="160.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="151.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa2" fitHeight="160.0" fitWidth="160.0" layoutX="233.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="262.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa1" fitHeight="160.0" fitWidth="160.0" layoutX="451.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="373.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa4" fitHeight="160.0" fitWidth="160.0" layoutX="14.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="485.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa5" fitHeight="160.0" fitWidth="160.0" layoutX="233.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="373.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa6" fitHeight="160.0" fitWidth="160.0" layoutX="451.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="483.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa7" fitHeight="160.0" fitWidth="160.0" layoutX="14.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa8" fitHeight="160.0" fitWidth="160.0" layoutX="233.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="150.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mesa9" fitHeight="160.0" fitWidth="160.0" layoutX="451.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/mesa.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="262.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../sources/mesa.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="262.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../sources/mesa.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../sources/mesa.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="483.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../sources/mesa.png" />
-               </image>
-            </ImageView>
+            <Label layoutX="78.0" layoutY="53.0" text="1">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="297.0" layoutY="53.0" text="2">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="mesa3" layoutX="515.0" layoutY="53.0" text="3">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="259.0" text="4">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="297.0" layoutY="259.0" text="5">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="515.0" layoutY="259.0" text="6">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="465.0" text="7">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="297.0" layoutY="465.0" text="8">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="515.0" layoutY="465.0" text="9">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="50.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
-      <AnchorPane layoutX="665.0" layoutY="120.0" prefHeight="600.0" prefWidth="305.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #8FABD4; -fx-background-radius: 10px;">
+      <AnchorPane layoutX="665.0" layoutY="120.0" prefHeight="600.0" prefWidth="305.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #986754; -fx-background-radius: 10px;">
          <children>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="30.0" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="INVENTARIO">
+            <Label alignment="CENTER" layoutX="10.0" layoutY="173.0" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="INVENTARIO">
                <font>
                   <Font name="Noto Sans Display Regular" size="40.0" />
                </font>
@@ -102,18 +127,6 @@
                </effect>
             </Label>
             <Label alignment="CENTER" layoutX="10.0" layoutY="270.0" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="CAJA">
-               <font>
-                  <Font name="Noto Sans Display Regular" size="40.0" />
-               </font>
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color red="0.9210526347160339" green="0.7419590353965759" blue="0.5372806787490845" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="506.0" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="PUB">
                <font>
                   <Font name="Noto Sans Display Regular" size="40.0" />
                </font>
