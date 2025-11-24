@@ -44,9 +44,12 @@ public class InventarioController implements Initializable {
     @FXML
     private TableColumn<Producto, String> colCategoria;
 
+    @FXML
+    private Label labelError;
+
 
     private ObservableList<Producto> listaProductos;
-    private String ficheroProductos = "/Restaurante/archivos_restaurante/productos.txt";
+    private String ficheroProductos = "src/Restaurante/archivos_restaurante/productos.txt";
 
 
     @Override
@@ -70,19 +73,26 @@ public class InventarioController implements Initializable {
     public void anadirProductos(ActionEvent event) {
         try {
             String nombre = txtNombre.getText();
-            double precio = Double.parseDouble(txtPrecio.getText());
+            double precio = Double.parseDouble(txtPrecio.getText().replace(",","."));
             int cantidad = Integer.parseInt(txtCantidad.getText());
 
             String categoria = cbCategorias.getValue();
 
             if (nombre.isEmpty()) {
-                // Poner label para los errores
+                labelError.setVisible(true);
+                labelError.setText("El nombre esta vacio");
                 return;
+            }
+
+            if (precio == 0) {
+                labelError.setVisible(true);
+                labelError.setText("El precio no puede ser 0");
             }
 
             Producto nuevoProducto = new Producto(nombre, precio, cantidad, categoria);
 
             listaProductos.add(nuevoProducto);
+            labelError.setVisible(false);
             guardarEnFichero(nuevoProducto);
 
             limpiarCampos();
@@ -98,9 +108,11 @@ public class InventarioController implements Initializable {
 
     private void guardarEnFichero(Producto p) {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroProductos));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroProductos, true));
             bw.write(p.getNombre() + "," + p.getPrecio() + "," + p.getCantidad() + "," + p.getCategoria());
             bw.newLine();
+
+            bw.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -131,6 +143,8 @@ public class InventarioController implements Initializable {
                     listaProductos.add(new Producto(nombre, precio, cantidad, categoria));
                 }
             }
+
+            br.close();
 
         }catch (IOException e) {
             e.printStackTrace();
@@ -209,6 +223,8 @@ public class InventarioController implements Initializable {
                 bw.write(p.getNombre() + "," + p.getPrecio() + "," + p.getCantidad() + "," + p.getCategoria());
                 bw.newLine();
             }
+
+            bw.close();
 
         } catch (IOException e) {
             e.printStackTrace();

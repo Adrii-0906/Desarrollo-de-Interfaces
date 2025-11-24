@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fc067a6-49c9-4d95-ad26-5d65eec6fcf8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Restaurante/archivos_restaurante/productos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurante/model/Producto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurante/controllers/InventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/controllers/InventarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurante/controllers/PantallaPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/controllers/PantallaPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurante/vistas/comanda1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/vistas/comanda1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurante/vistas/inventario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/vistas/inventario.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurante/vistas/pantallaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/vistas/pantallaPrincipal.fxml" afterDir="false" />
     </list>

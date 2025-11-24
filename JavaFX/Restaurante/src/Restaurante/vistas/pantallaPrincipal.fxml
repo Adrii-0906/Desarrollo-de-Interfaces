@@ -114,7 +114,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="665.0" layoutY="120.0" prefHeight="600.0" prefWidth="305.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #986754; -fx-background-radius: 10px;">
          <children>
-            <Label fx:id="btnInventario" alignment="CENTER" layoutX="10.0" layoutY="173.0" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="INVENTARIO">
+            <Label fx:id="btnInventario" alignment="CENTER" layoutX="10.0" layoutY="173.0" onMouseClicked="#irAInventario" prefHeight="60.0" prefWidth="285.0" style="-fx-background-color: #F5D9C3; -fx-background-radius: 20px;" text="INVENTARIO">
                <font>
                   <Font name="Noto Sans Display Regular" size="40.0" />
                </font>
