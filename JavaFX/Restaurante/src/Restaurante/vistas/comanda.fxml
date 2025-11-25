@@ -11,60 +11,60 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurante.controllers.Comanda1Controller">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurante.controllers.ComandaController">
    <children>
-      <AnchorPane layoutX="30.0" layoutY="86.0" prefHeight="650.0" prefWidth="940.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 20px;">
+      <AnchorPane fx:id="cbBebida" layoutX="30.0" layoutY="86.0" prefHeight="650.0" prefWidth="940.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 20px;">
          <children>
-            <TableView layoutX="18.0" layoutY="14.0" prefHeight="625.0" prefWidth="614.0">
+            <TableView fx:id="tablaComanda" layoutX="18.0" layoutY="14.0" prefHeight="625.0" prefWidth="614.0">
               <columns>
-                <TableColumn prefWidth="204.0" text="Unidades" />
-                <TableColumn prefWidth="204.0" text="Nombre" />
-                  <TableColumn prefWidth="204.0" text="Precio" />
+                <TableColumn fx:id="colUnidades" prefWidth="204.0" text="Unidades" />
+                <TableColumn fx:id="colNombre" prefWidth="204.0" text="Nombre" />
+                  <TableColumn fx:id="colPrecio" prefWidth="204.0" text="Precio" />
               </columns>
             </TableView>
-            <Button layoutX="642.0" layoutY="309.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BF092F;" text="Eliminar Producto" textFill="WHITE" />
+            <Button fx:id="btnEliminar" layoutX="642.0" layoutY="309.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BF092F;" text="Eliminar Producto" textFill="WHITE" />
             <MenuButton alignment="CENTER" layoutX="642.0" layoutY="15.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #6E8CFB;" text="Añadir Bebida" textFill="WHITE">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" layoutX="642.0" layoutY="59.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #63A361;" text="Añadir Entrante" textFill="WHITE">
+            <MenuButton fx:id="cbEntrante" alignment="CENTER" layoutX="642.0" layoutY="59.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #63A361;" text="Añadir Entrante" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" layoutX="642.0" layoutY="103.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #C1785A;" text="Añadir Carne" textFill="WHITE">
+            <MenuButton fx:id="cbCarne" alignment="CENTER" layoutX="642.0" layoutY="103.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #C1785A;" text="Añadir Carne" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" layoutX="642.0" layoutY="148.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #70B2B2;" text="Añadir Pescado" textFill="WHITE">
+            <MenuButton fx:id="cbPescado" alignment="CENTER" layoutX="642.0" layoutY="148.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #70B2B2;" text="Añadir Pescado" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <MenuButton alignment="CENTER" layoutX="642.0" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #E06B80;" text="Añadir Postre" textFill="WHITE">
+            <MenuButton fx:id="cbPostre" alignment="CENTER" layoutX="642.0" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #E06B80;" text="Añadir Postre" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <Label layoutX="642.0" layoutY="469.0" prefHeight="30.0" prefWidth="286.0" text="Precio Total =">
+            <Label fx:id="labelTotal" layoutX="642.0" layoutY="469.0" prefHeight="30.0" prefWidth="286.0" text="Precio Total =">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <MenuButton alignment="CENTER" layoutX="642.0" layoutY="353.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #08CB00;" text="Cobrar Cuenta" textFill="WHITE">
+            <MenuButton fx:id="btnCobrar" alignment="CENTER" layoutX="642.0" layoutY="353.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #08CB00;" text="Cobrar Cuenta" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <Label layoutX="642.0" layoutY="509.0" prefHeight="30.0" prefWidth="286.0" text="Devolver = ">
+            <Label fx:id="labelDevolver" layoutX="642.0" layoutY="509.0" prefHeight="30.0" prefWidth="286.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -73,12 +73,12 @@
       </AnchorPane>
       <AnchorPane layoutX="30.0" layoutY="14.0" prefHeight="60.0" prefWidth="940.0" style="-fx-border-color: black; -fx-border-width: 2px 2px 2px 2px; -fx-border-radius: 10px; -fx-background-color: #986754; -fx-background-radius: 10px;">
          <children>
-            <Label layoutX="379.0" layoutY="9.0" text="Casa Manolo">
+            <Label fx:id="labelTitulo" layoutX="419.0" layoutY="9.0" text="Mesa 1">
                <font>
                   <Font name="Noto Serif Display Bold" size="30.0" />
                </font>
             </Label>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnSalir" fitHeight="50.0" fitWidth="50.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../sources/salir.png" />
                </image>

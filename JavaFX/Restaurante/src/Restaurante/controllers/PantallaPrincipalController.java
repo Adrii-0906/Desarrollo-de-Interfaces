@@ -1,6 +1,5 @@
 package Restaurante.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -39,6 +38,7 @@ public class PantallaPrincipalController {
     @FXML
     private Label btnCaja;
 
+    public static int numeroDeMesaActual = 0;
 
     private void cambiarPantalla(MouseEvent event, String fxml, String titulo) {
         try {
@@ -55,39 +55,48 @@ public class PantallaPrincipalController {
 
     @FXML
     public void irAMesa1(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 1");
+        numeroDeMesaActual = 1;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 1");
     }
     @FXML
     public void irAMesa2(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 2");
+        numeroDeMesaActual = 2;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 2");
     }
     @FXML
     public void irAMesa3(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 3");
+        numeroDeMesaActual = 3;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 3");
     }
     @FXML
     public void irAMesa4(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 4");
+        numeroDeMesaActual = 4;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 4");
     }
     @FXML
     public void irAMesa5(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 5");
+        numeroDeMesaActual = 5;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 5");
     }
     @FXML
     public void irAMesa6(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 6");
+        numeroDeMesaActual = 6;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 6");
     }
     @FXML
     public void irAMesa7(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 7");
+        numeroDeMesaActual = 7;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 7");
     }
     @FXML
     public void irAMesa8(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 8");
+        numeroDeMesaActual = 8;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 8");
     }
     @FXML
     public void irAMesa9(MouseEvent event) {
-        cambiarPantalla(event, "/Restaurante/vistas/comanda1.fxml", "Comanda Mesa 9");
+        numeroDeMesaActual = 9;
+        cambiarPantalla(event, "/Restaurante/vistas/comanda.fxml", "Comanda Mesa 9");
     }
 
     public void irAInventario(MouseEvent event) {
