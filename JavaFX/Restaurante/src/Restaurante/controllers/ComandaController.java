@@ -13,8 +13,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
 
-import java.awt.event.ActionEvent;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +29,9 @@ public class ComandaController implements Initializable {
 
     @FXML
     private Label labelDevolver;
+
+    @FXML
+    private Label labelMensaje;
 
     @FXML
     private Button btnSalir;
@@ -90,27 +93,47 @@ public class ComandaController implements Initializable {
 
     @FXML
     public void anadirBebida(ActionEvent event) {
-        gestionarProdcuto(cbBebida.getValue());
+        Producto p = cbBebida.getValue();
+        if (p != null) {
+            gestionarProdcuto(p);
+            cbBebida.getSelectionModel().clearSelection();
+        }
     }
 
     @FXML
     public void anadirEntrante(ActionEvent event) {
-        gestionarProdcuto(cbEntrante.getValue());
+        Producto p = cbEntrante.getValue();
+        if (p != null) {
+            gestionarProdcuto(p);
+            cbEntrante.getSelectionModel().clearSelection();
+        }
     }
 
     @FXML
     public void anadirCarne(ActionEvent event) {
-        gestionarProdcuto(cbCarne.getValue());
+        Producto p = cbCarne.getValue();
+        if (p != null) {
+            gestionarProdcuto(p);
+            cbCarne.getSelectionModel().clearSelection();
+        }
     }
 
     @FXML
     public void anadirPescado(ActionEvent event) {
-        gestionarProdcuto(cbPescado.getValue());
+        Producto p = cbPescado.getValue();
+        if (p != null) {
+            gestionarProdcuto(p);
+            cbPescado.getSelectionModel().clearSelection();
+        }
     }
 
     @FXML
     public void anadirPostre(ActionEvent event) {
-        gestionarProdcuto(cbPostre.getValue());
+        Producto p = cbPostre.getValue();
+        if (p != null) {
+            gestionarProdcuto(p);
+            cbPostre.getSelectionModel().clearSelection();
+        }
     }
 
     private void gestionarProdcuto(Producto productoSeleccinado) {
@@ -231,6 +254,136 @@ public class ComandaController implements Initializable {
         labelTotal.setText(String.format("%.2f €", total));
     }
 
+
+    @FXML
+    public void cobrarMesa(ActionEvent event) {
+
+        mostrarMensaje("", false);
+
+        double total = 0;
+
+        for (Producto p : productosCuenta) {
+            total += (p.getPrecio() * p.getCantidad());
+        }
+
+        if (total == 0) {
+            mostrarMensaje("La mesa está vacía, añade productos antes de cobrar.", true);
+            return;
+        }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cobrar mesa");
+        alert.setHeaderText("Cuenta total de la mesa: " + String.format("%.2f", total));
+        alert.setContentText("Selecciona el metodo de pago");
+
+        // Creamos los botones para decidir la forma de pago
+        ButtonType btnEfectivo = new ButtonType("Efectivo");
+        ButtonType btnTarjeta = new ButtonType("Tarjeta");
+        ButtonType btnCancelar = new ButtonType("Cancelar");
+
+        alert.getButtonTypes().setAll(btnEfectivo, btnTarjeta, btnCancelar);
+
+        java.util.Optional<ButtonType> resultado = alert.showAndWait();
+
+        if (resultado.get() == btnTarjeta) {
+            cobrarDirectamente(total, "Tarjeta");
+        } else if (resultado.get() == btnEfectivo) {
+            pagoConEfectivo(total);
+        }
+    }
+
+    private void pagoConEfectivo(double total) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Pago en Efectivo");
+        dialog.setHeaderText("Total: " + String.format("%.2f €", total));
+        dialog.setContentText("Dinero entregado:");
+
+        java.util.Optional<String> result = dialog.showAndWait();
+
+        if (result.isPresent()) {
+            try {
+                // Leemos lo que ha escrito el usuario (cambiando coma por punto)
+                double entregado = Double.parseDouble(result.get().replace(",", "."));
+
+                if (entregado < total) {
+                    mostrarMensaje("Dinero insuficiente. Faltan: " + String.format("%.2f €", total - entregado), true);
+                } else {
+                    double cambio = entregado - total;
+
+                    mostrarMensaje("✅ ¡COBRADO! Devolver cambio: " + String.format("%.2f €", cambio), false);
+
+                    // Mostramos el cambio
+                    Alert info = new Alert(Alert.AlertType.INFORMATION);
+                    info.setTitle("Cambio");
+                    info.setHeaderText("Operación realizada");
+                    info.setContentText("Devolver al cliente: " + String.format("%.2f €", cambio));
+                    info.showAndWait();
+
+                    // Cerramos la venta
+                    cobrarDirectamente(total, "Efectivo");
+                }
+            } catch (NumberFormatException e) {
+                mostrarMensaje("Error: Introduce un número válido.", true);
+            }
+        } else {
+            mostrarMensaje("Operación cancelada.", true);
+        }
+    }
+
+    private void cobrarDirectamente(double total, String metodoPago) {
+        guardarEnHistorialCaja(total, metodoPago);
+
+        productosCuenta.clear();
+
+        File file = new File(ficheroMesaActual);
+
+        if (file.exists()) {
+            file.delete();
+        }
+
+        actualizarTotal();
+        mostrarMensaje("Cobro con " + metodoPago.toUpperCase() + " realizado correctamente.", false);
+    }
+
+    private void guardarEnHistorialCaja(double total, String metodoPago) {
+
+        String ficheroCaja = "src/Restaurante/archivos_restaurante/cajaDia.txt";
+
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroCaja, true));
+            bw.write("Mesa " + PantallaPrincipalController.numeroDeMesaActual + ", " +  total + "," + metodoPago);
+            bw.newLine();
+
+            bw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void eliminarProducto(ActionEvent event) {
+
+        Producto productoSeleccionado = tablaComanda.getSelectionModel().getSelectedItem();
+
+        if (productoSeleccionado == null) {
+            mostrarMensaje("Selecciona un producto de la lista para eliminar.", true);
+            return;
+        }
+
+        if (productoSeleccionado.getCantidad() > 1) {
+            productoSeleccionado.setCantidad(productoSeleccionado.getCantidad() - 1);
+            mostrarMensaje("Eliminado 1 unidad de " + productoSeleccionado.getNombre(), true);
+        } else {
+            productosCuenta.remove(productoSeleccionado);
+            mostrarMensaje("Eliminado: " + productoSeleccionado.getNombre(), false);
+        }
+
+        tablaComanda.refresh();
+        actualizarTotal();
+        guardarComandaEnFichero();
+    }
+
     @FXML
     public void volverAtras(MouseEvent event) {
         try {
@@ -242,6 +395,18 @@ public class ComandaController implements Initializable {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void mostrarMensaje(String texto, boolean esError) {
+        labelMensaje.setText(texto);
+
+        if (esError) {
+            // Errores
+            labelMensaje.setStyle("-fx-text-fill: #D32F2F; -fx-font-weight: bold;");
+        } else {
+            // Confirmaciones
+            labelMensaje.setStyle("-fx-text-fill: #388E3C; -fx-font-weight: bold;");
         }
     }
 }
