@@ -1,6 +1,7 @@
 package Restaurante.controllers;
 
 import Restaurante.model.Producto;
+import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.util.Duration;
 
 import java.io.*;
 import java.net.URL;
@@ -71,6 +73,8 @@ public class ComandaController implements Initializable {
     //Rutas de ficheros
     private String ficheroProductos = "src/Restaurante/archivos_restaurante/productos.txt";
     private String ficheroMesaActual;
+
+    private PauseTransition temporizadorLabel;
 
 
     @Override
@@ -258,7 +262,7 @@ public class ComandaController implements Initializable {
 
     @FXML
     public void cobrarMesa(ActionEvent event) {
-
+        labelMensaje.setVisible(false);
         mostrarMensaje("", false);
 
         double total = 0;
@@ -268,6 +272,7 @@ public class ComandaController implements Initializable {
         }
 
         if (total == 0) {
+            labelMensaje.setVisible(true);
             mostrarMensaje("La mesa está vacía, añade productos antes de cobrar.", true);
             return;
         }
@@ -294,6 +299,7 @@ public class ComandaController implements Initializable {
     }
 
     private void pagoConEfectivo(double total) {
+        labelMensaje.setVisible(false);
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Pago en Efectivo");
         dialog.setHeaderText("Total: " + String.format("%.2f €", total));
@@ -307,11 +313,12 @@ public class ComandaController implements Initializable {
                 double entregado = Double.parseDouble(result.get().replace(",", "."));
 
                 if (entregado < total) {
+                    labelMensaje.setVisible(true);
                     mostrarMensaje("Dinero insuficiente. Faltan: " + String.format("%.2f €", total - entregado), true);
                 } else {
                     double cambio = entregado - total;
-
-                    mostrarMensaje("✅ ¡COBRADO! Devolver cambio: " + String.format("%.2f €", cambio), false);
+                    labelMensaje.setVisible(true);
+                    mostrarMensaje("¡COBRADO! Devolver cambio: " + String.format("%.2f €", cambio), false);
 
                     // Mostramos el cambio
                     Alert info = new Alert(Alert.AlertType.INFORMATION);
@@ -324,14 +331,17 @@ public class ComandaController implements Initializable {
                     cobrarDirectamente(total, "Efectivo");
                 }
             } catch (NumberFormatException e) {
+                labelMensaje.setVisible(true);
                 mostrarMensaje("Error: Introduce un número válido.", true);
             }
         } else {
+            labelMensaje.setVisible(true);
             mostrarMensaje("Operación cancelada.", true);
         }
     }
 
     private void cobrarDirectamente(double total, String metodoPago) {
+        labelMensaje.setVisible(false);
         guardarEnHistorialCaja(total, metodoPago);
 
         productosCuenta.clear();
@@ -343,6 +353,7 @@ public class ComandaController implements Initializable {
         }
 
         actualizarTotal();
+        labelMensaje.setVisible(true);
         mostrarMensaje("Cobro con " + metodoPago.toUpperCase() + " realizado correctamente.", false);
     }
 
@@ -364,19 +375,23 @@ public class ComandaController implements Initializable {
 
     @FXML
     public void eliminarProducto(ActionEvent event) {
+        labelMensaje.setVisible(false);
 
         Producto productoSeleccionado = tablaComanda.getSelectionModel().getSelectedItem();
 
         if (productoSeleccionado == null) {
+            labelMensaje.setVisible(true);
             mostrarMensaje("Selecciona un producto de la lista para eliminar.", true);
             return;
         }
 
         if (productoSeleccionado.getCantidad() > 1) {
             productoSeleccionado.setCantidad(productoSeleccionado.getCantidad() - 1);
+            labelMensaje.setVisible(true);
             mostrarMensaje("Eliminado 1 unidad de " + productoSeleccionado.getNombre(), true);
         } else {
             productosCuenta.remove(productoSeleccionado);
+            labelMensaje.setVisible(true);
             mostrarMensaje("Eliminado: " + productoSeleccionado.getNombre(), false);
         }
 
@@ -400,6 +415,9 @@ public class ComandaController implements Initializable {
     }
 
     private void mostrarMensaje(String texto, boolean esError) {
+        if (labelMensaje == null) {
+            return;
+        }
         labelMensaje.setText(texto);
 
         if (esError) {
@@ -409,5 +427,24 @@ public class ComandaController implements Initializable {
             // Confirmaciones
             labelMensaje.setStyle("-fx-text-fill: #388E3C; -fx-font-weight: bold;");
         }
+
+        if (temporizadorLabel != null) {
+            temporizadorLabel.stop();
+        }
+
+        temporizadorLabel = new PauseTransition(Duration.seconds(4));
+
+        temporizadorLabel.setOnFinished(event -> {
+            labelMensaje.setText("");
+            labelMensaje.setVisible(false);
+        });
+
+        temporizadorLabel.play();
     }
+
+    // Metodo para actualizar el fichecho de inventario
+    private void actualizarCantidadInventario(String nombre, int cantidad) {
+        // Hacer manana
+    }
+
 }
