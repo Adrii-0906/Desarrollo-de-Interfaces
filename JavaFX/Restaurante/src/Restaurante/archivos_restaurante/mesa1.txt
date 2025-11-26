@@ -1,0 +1,2 @@
+Pez Espada,12.0,1
+Coca Cola,2.2,1

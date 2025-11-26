@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
@@ -34,7 +35,7 @@ public class ComandaController implements Initializable {
     private Label labelMensaje;
 
     @FXML
-    private Button btnSalir;
+    private ImageView btnSalir;
 
     @FXML
     private Button btnEliminar;

@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fc067a6-49c9-4d95-ad26-5d65eec6fcf8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Restaurante/archivos_restaurante/cajaDia.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrigorificoInteligente/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrigorificoInteligente/nbproject/private/private.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurante/archivos_restaurante/productos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/archivos_restaurante/productos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurante/controllers/ComandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/controllers/ComandaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurante/vistas/comanda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurante/vistas/comanda.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tema2/Actividad 1/Calculadora/Actividad1/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tema2/Actividad 1/Calculadora/Actividad1/nbproject/private/private.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
