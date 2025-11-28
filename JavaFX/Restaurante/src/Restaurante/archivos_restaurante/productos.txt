@@ -1,2 +1,8 @@
-Coca Cola,2.2,100,Bebida
-Pez Espada,12.0,120,Pescado
+Coca Cola,2.2,85,Bebida
+Pez Espada,12.0,111,Pescado
+Solomillo a la brasa,13.5,92,Carne
+Fanta Naranja,2.2,86,Bebida
+Lagartito Iberico,12.0,100,Carne
+Atun encebollado,11.5,100,Pescado
+Tarta de la abuela,5.5,98,Postre
+Mouse de Chocolate,5.0,100,Postre

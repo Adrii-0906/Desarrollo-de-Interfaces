@@ -1,0 +1,9 @@
+Mesa 1, 54.4,Efectivo
+Mesa 1, 17.9,Tarjeta
+Mesa 1, 29.9,Tarjeta
+Mesa 1, 32.1,Tarjeta
+Mesa 2, 29.9,Tarjeta
+Mesa 1, 29.9,Tarjeta
+Mesa 1, 34.3,Efectivo
+Mesa 2, 34.3,Efectivo
+Mesa 1, 80.30000000000001,Tarjeta

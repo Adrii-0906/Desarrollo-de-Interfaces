@@ -1,7 +1,9 @@
 package Restaurante.controllers;
 
 import Restaurante.model.Producto;
+import Restaurante.utils.GenerarTicket;
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +22,8 @@ import javafx.util.Duration;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ComandaController implements Initializable {
@@ -29,9 +33,6 @@ public class ComandaController implements Initializable {
 
     @FXML
     private Label labelTotal;
-
-    @FXML
-    private Label labelDevolver;
 
     @FXML
     private Label labelMensaje;
@@ -94,6 +95,12 @@ public class ComandaController implements Initializable {
         cargarInventarioEnCombos();
         cargarPedidoExistente();
         actualizarTotal();
+
+        configurarCombo(cbBebida);
+        configurarCombo(cbEntrante);
+        configurarCombo(cbCarne);
+        configurarCombo(cbPescado);
+        configurarCombo(cbPostre);
     }
 
     @FXML
@@ -101,7 +108,11 @@ public class ComandaController implements Initializable {
         Producto p = cbBebida.getValue();
         if (p != null) {
             gestionarProdcuto(p);
-            cbBebida.getSelectionModel().clearSelection();
+
+            Platform.runLater(() -> {
+                cbBebida.setValue(null);
+                cbBebida.getSelectionModel().clearSelection();
+            });
         }
     }
 
@@ -110,7 +121,10 @@ public class ComandaController implements Initializable {
         Producto p = cbEntrante.getValue();
         if (p != null) {
             gestionarProdcuto(p);
-            cbEntrante.getSelectionModel().clearSelection();
+            Platform.runLater(() -> {
+                cbEntrante.setValue(null);
+                cbEntrante.getSelectionModel().clearSelection();
+            });
         }
     }
 
@@ -119,7 +133,10 @@ public class ComandaController implements Initializable {
         Producto p = cbCarne.getValue();
         if (p != null) {
             gestionarProdcuto(p);
-            cbCarne.getSelectionModel().clearSelection();
+            Platform.runLater(() -> {
+                cbCarne.setValue(null);
+                cbCarne.getSelectionModel().clearSelection();
+            });
         }
     }
 
@@ -128,7 +145,10 @@ public class ComandaController implements Initializable {
         Producto p = cbPescado.getValue();
         if (p != null) {
             gestionarProdcuto(p);
-            cbPescado.getSelectionModel().clearSelection();
+            Platform.runLater(() -> {
+                cbPescado.setValue(null);
+                cbPescado.getSelectionModel().clearSelection();
+            });
         }
     }
 
@@ -137,7 +157,10 @@ public class ComandaController implements Initializable {
         Producto p = cbPostre.getValue();
         if (p != null) {
             gestionarProdcuto(p);
-            cbPostre.getSelectionModel().clearSelection();
+            Platform.runLater(() -> {
+                cbPostre.setValue(null);
+                cbPostre.getSelectionModel().clearSelection();
+            });
         }
     }
 
@@ -146,6 +169,7 @@ public class ComandaController implements Initializable {
             return;
         }
 
+        actualizarCantidadInventario(productoSeleccinado.getNombre(), -1);
         boolean encontrado = false;
 
         for (Producto p: productosCuenta) {
@@ -162,8 +186,8 @@ public class ComandaController implements Initializable {
         }
 
         tablaComanda.refresh();
-        actualizarTotal();
         guardarComandaEnFichero();
+        actualizarTotal();
     }
 
     private void cargarInventarioEnCombos() {
@@ -341,6 +365,23 @@ public class ComandaController implements Initializable {
     }
 
     private void cobrarDirectamente(double total, String metodoPago) {
+
+        // Generamos el ticket
+        try {
+
+            Restaurante.utils.GenerarTicket generador = new Restaurante.utils.GenerarTicket();
+
+            int numMesa = PantallaPrincipalController.numeroDeMesaActual;
+
+            generador.crearTicket(productosCuenta, total, numMesa, metodoPago);
+
+            System.out.println("Ticket PDF creado con éxito.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al generar el PDF. Continuando con el cobro...");
+        }
+
         labelMensaje.setVisible(false);
         guardarEnHistorialCaja(total, metodoPago);
 
@@ -385,6 +426,7 @@ public class ComandaController implements Initializable {
             return;
         }
 
+        actualizarCantidadInventario(productoSeleccionado.getNombre(), 1);
         if (productoSeleccionado.getCantidad() > 1) {
             productoSeleccionado.setCantidad(productoSeleccionado.getCantidad() - 1);
             labelMensaje.setVisible(true);
@@ -396,8 +438,8 @@ public class ComandaController implements Initializable {
         }
 
         tablaComanda.refresh();
-        actualizarTotal();
         guardarComandaEnFichero();
+        actualizarTotal();
     }
 
     @FXML
@@ -444,7 +486,70 @@ public class ComandaController implements Initializable {
 
     // Metodo para actualizar el fichecho de inventario
     private void actualizarCantidadInventario(String nombre, int cantidad) {
-        // Hacer manana
+        File fichero = new File(ficheroProductos);
+        List<String> lineas = new ArrayList<>();
+        boolean modificado = false;
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fichero));
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+                if (partes.length == 4 && partes[0].equals(nombre)) {
+                    int cantidadActual = Integer.parseInt(partes[2]);
+                    int nuevaCantidad = cantidadActual + cantidad;
+
+                    String nuevaLinea = partes[0] + "," + partes[1] + "," + nuevaCantidad + "," + partes[3];
+                    lineas.add(nuevaLinea);
+                    modificado = true;
+                } else {
+                    lineas.add(linea);
+                }
+            }
+
+            br.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (modificado) {
+            try {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
+
+                for (String s: lineas) {
+                    bw.write(s);
+                    bw.newLine();
+                }
+
+                bw.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
+    private void configurarCombo(ComboBox<Producto> cb) {
+        // CellFactory para la lista desplegada
+        cb.setCellFactory(param -> new ListCell<Producto>() {
+            @Override
+            protected void updateItem(Producto item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) setText(null);
+                else setText(item.getNombre() + " (" + item.getPrecio() + "€)");
+            }
+        });
+
+        // ButtonCell para el botón cerrado (Esto arregla el PromptText)
+        cb.setButtonCell(new ListCell<Producto>() {
+            @Override
+            protected void updateItem(Producto item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) setText(null); // Deja ver el PromptText
+                else setText(item.getNombre());
+            }
+        });
+    }
 }

@@ -82,7 +82,8 @@ public class InicioController {
 
     public void accederSegunHora() {
         LocalTime horaActual = LocalTime.now();
-        boolean noche = horaActual.isAfter(LocalTime.MIDNIGHT) && horaActual.isBefore(LocalTime.of(6, 0));
+        // boolean noche = horaActual.isAfter(LocalTime.MIDNIGHT) && horaActual.isBefore(LocalTime.of(6, 0));
+        boolean noche = false;
 
         if (noche) {
             cambiarEscena(pub, "PUB Casa Manolo");
@@ -90,7 +91,6 @@ public class InicioController {
             cambiarEscena(restaurante, "Restaurante Casa Manolo");
         }
     }
-
 
     private void cambiarEscena(String fxmlPath, String title) {
         try {
@@ -102,8 +102,6 @@ public class InicioController {
 
             Parent root = FXMLLoader.load(url);
 
-            // TRUCO: Obtenemos la ventana a través del botón 'btnAcceder',
-            // en lugar de usar el 'event'.
             Stage stage = (Stage) btnAcceder.getScene().getWindow();
 
             stage.setTitle(title);
