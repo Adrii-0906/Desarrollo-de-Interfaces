@@ -104,6 +104,6 @@ public class PantallaPrincipalController {
     }
 
     public void irACaja(MouseEvent event) {
-        cambiarPantalla(event, "", "Caja Restaurante");
+        cambiarPantalla(event, "/Restaurante/vistas/caja.fxml", "Caja Restaurante");
     }
 }

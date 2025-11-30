@@ -400,11 +400,13 @@ public class ComandaController implements Initializable {
 
     private void guardarEnHistorialCaja(double total, String metodoPago) {
 
-        String ficheroCaja = "src/Restaurante/archivos_restaurante/cajaDia.txt";
+        String ficheroCaja = "src/Restaurante/archivos_restaurante/cajaVenta.txt";
+
+        String fechaHoy = new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date());
 
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroCaja, true));
-            bw.write("Mesa " + PantallaPrincipalController.numeroDeMesaActual + ", " +  total + "," + metodoPago);
+            bw.write("Mesa " + PantallaPrincipalController.numeroDeMesaActual + ", " +  total + "," + metodoPago + "," + fechaHoy);
             bw.newLine();
 
             bw.close();
